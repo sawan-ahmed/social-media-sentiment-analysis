@@ -1,140 +1,70 @@
-# Social Media Sentiment Analysis
+# Getting Started with Create React App
 
-This project analyzes social media posts (such as tweets and Reddit posts) to determine the sentiment of discussions around a specific topic. The sentiment analysis is powered by a Natural Language Processing (NLP) model, and the data is processed using the MapReduce framework. The results are displayed in a Dockerized web application with interactive sentiment visualization.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project Overview
+## Available Scripts
 
-The project is structured into multiple components:
+In the project directory, you can run:
 
-- **Frontend**: A web application built with React that displays sentiment analysis results.
-- **Backend**: An API built with Node.js and Express to fetch data and serve sentiment results.
-- **Data**: Social media data (e.g., Twitter and Reddit) fetched through their respective APIs.
-- **MapReduce**: Used to process and analyze the sentiment of large-scale data.
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Features
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- **Sentiment Analysis**: The sentiment of social media posts is classified as positive, negative, or neutral using an NLP model.
-- **Data Visualization**: Interactive sentiment graphs are displayed on the frontend using Chart.js.
-- **Dockerized App**: Both frontend and backend are Dockerized, making it easy to deploy and run the application in any environment.
-- **MapReduce Framework**: Efficient data processing using MapReduce for handling large datasets.
+### `npm test`
 
-## Setup and Installation
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Prerequisites
+### `npm run build`
 
-- Docker and Docker Compose installed on your machine.
-- Node.js installed for local development (optional if you are using Docker).
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Running the Application
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. Clone the repository:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-   ```bash
-   git clone https://github.com/your-username/social-media-sentiment-analysis.git
-   cd social-media-sentiment-analysis
-   ```
+### `npm run eject`
 
-2. Build and start the application using Docker Compose:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-   ```bash
-   docker-compose up --build
-   ```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-3. Once the application is running, open the frontend in your browser:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-   ```
-   http://localhost:3000
-   ```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-   The backend API will be available at:
+## Learn More
 
-   ```
-   http://localhost:5000
-   ```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Development
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-To run the frontend or backend locally (without Docker):
+### Code Splitting
 
-1. **Frontend**:
-   - Navigate to the `sentiment-analysis-frontend` folder.
-   - Install dependencies:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-     ```bash
-     npm install
-     ```
+### Analyzing the Bundle Size
 
-   - Start the frontend:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-     ```bash
-     npm start
-     ```
+### Making a Progressive Web App
 
-2. **Backend**:
-   - Navigate to the `sentiment-analysis-backend` folder.
-   - Install dependencies:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-     ```bash
-     npm install
-     ```
+### Advanced Configuration
 
-   - Start the backend:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-     ```bash
-     node server.js
-     ```
+### Deployment
 
-The frontend will be available at `http://localhost:3000`, and the backend will be available at `http://localhost:5000`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## API Endpoints
+### `npm run build` fails to minify
 
-### `GET /api/sentiment`
-
-- **Description**: Fetches the sentiment analysis results.
-- **Response**:
-
-   ```json
-   [
-     {
-       "timestamp": "2025-03-10T10:00:00",
-       "score": 0.5
-     },
-     {
-       "timestamp": "2025-03-10T11:00:00",
-       "score": 0.7
-     },
-     {
-       "timestamp": "2025-03-10T12:00:00",
-       "score": -0.3
-     }
-   ]
-   ```
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Make your changes and commit them (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-name`).
-5. Create a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- **React** for building the frontend UI.
-- **Node.js & Express** for creating the backend API.
-- **Chart.js** for data visualization.
-- **MapReduce** framework for large-scale data processing.
-
----
-
-### How to Use:
-
-1. **Edit the placeholders**: Replace `your-username` with your actual GitHub username in the clone URL.
-2. **Customization**: You can expand sections such as "Setup and Installation," "API Endpoints," and "Development" if your application includes more features or setup steps in the future.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

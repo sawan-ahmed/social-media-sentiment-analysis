@@ -1,0 +1,85 @@
+/* Base styles for App */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #282c34; /* Dark background color */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header bar styling */
+.App-header {
+  background-color: #282c34; /* Keep header dark */
+  padding: 10px 20px; /* Padding for spacing */
+  display: flex;
+  justify-content: space-between; /* Align items (title, buttons) on the same line */
+  align-items: center;
+  border-bottom: 2px solid #2196F3; /* Blue border at the bottom for contrast */
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adding shadow for separation */
+}
+
+/* Title styling for clickable behavior without outline */
+.App-title {
+  font-size: 1.8em;
+  color: white;
+  margin: 0;
+  font-weight: bold;
+  padding-left: 10px;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+  padding: 5px 15px;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for the title (change color without outline) */
+.App-title:hover {
+  color: #2196F3; /* Blue color when hovered */
+}
+
+/* Actions container (buttons) */
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Styling for the refresh and toggle buttons */
+.refresh-button, .toggle-button {
+  background-color: #282c34; /* Dark background */
+  color: #2196F3; /* Blue text */
+  font-size: 1em;
+  padding: 8px 15px;
+  border: 2px solid #2196F3; /* Blue outline */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for buttons */
+.refresh-button:hover, .toggle-button:hover {
+  background-color: #2196F3; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Content below header */
+.content {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+/* Styling for the sentiment analysis results heading */
+.content h2 {
+  font-size: 2em;
+  color: #2196F3; /* Blue color for heading */
+  margin-bottom: 20px;
+}
+
+/* Styling for hidden message when results are off */
+.content p {
+  font-size: 1.1em;
+  color: #bbb; /* Light gray color for hidden message */
+}
