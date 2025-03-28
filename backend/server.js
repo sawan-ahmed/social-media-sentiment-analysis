@@ -45,19 +45,13 @@ const Tweet = mongoose.model("Tweet", tweetSchema);
 // ✅ Fetch AI tweets and store them in MongoDB
 app.get("/tweets", async (req, res) => {
     try {
-        // ✅ First, check if tweets exist in MongoDB
-        const existingTweets = await Tweet.find().sort({ created_at: -1 }).limit(10);
-        if (existingTweets.length > 0) {
-            console.log("✅ Serving tweets from MongoDB.");
-            return res.json({ data: existingTweets });
-        }
-
         console.log("📡 Fetching fresh AI tweets from Twitter API...");
+
         const response = await axios.get("https://api.twitter.com/2/tweets/search/recent", {
             headers: { Authorization: `Bearer ${BEARER_TOKEN}` },
             params: {
                 query: "AI OR Artificial Intelligence OR #AI",
-                max_results: 10,
+                max_results: 10, // Twitter API limit
                 "tweet.fields": "created_at,public_metrics",
                 expansions: "author_id",
                 "user.fields": "username,name",
@@ -65,8 +59,7 @@ app.get("/tweets", async (req, res) => {
         });
 
         if (!response.data || !response.data.data) {
-            console.warn("⚠️ No AI-related tweets found.");
-            return res.json({ data: [], message: "No fresh tweets found." });
+            throw new Error("No fresh tweets found.");
         }
 
         const tweets = response.data.data;
@@ -100,12 +93,25 @@ app.get("/tweets", async (req, res) => {
         // ✅ Save new tweets to MongoDB (ignore duplicates)
         await Tweet.insertMany(tweetData, { ordered: false }).catch(err => console.warn("⚠️ Some tweets were already stored."));
 
-        res.json({ data: tweetData });
     } catch (error) {
         console.error("❌ Error fetching AI tweets:", error.response?.data || error.message);
-        res.status(500).json({ error: "Failed to fetch AI tweets. Please try again later." });
+    }
+
+    // ✅ Always return old tweets, even if API fails
+    try {
+        const allTweets = await Tweet.find().sort({ created_at: -1 }).limit(100);
+        res.json({ data: allTweets });
+    } catch (dbError) {
+        console.error("❌ MongoDB error:", dbError);
+        res.status(500).json({ error: "Failed to fetch tweets from the database." });
     }
 });
+
+// ✅ Auto-Fetch Tweets Every Hour (Optional)
+setInterval(async () => {
+    console.log("⏳ Auto-fetching new tweets...");
+    await axios.get("http://localhost:5001/tweets");
+}, 60 * 60 * 1000); // Every 1 hour
 
 // ✅ Start the Express server
 app.listen(PORT, () => console.log(`🚀 AI Tweet Sentiment Server running on http://localhost:${PORT}`));

@@ -217,3 +217,24 @@
 .negative-bar {
   background-color: #f44336;
 }
+
+/* ✅ Align button to the right */
+.button-container {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.fetch-button {
+  background-color: #2196F3; /* Blue color */
+  color: white;
+  font-size: 1em;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fetch-button:hover {
+  background-color: #0b7dda;
+}
