@@ -1,0 +1,89 @@
+/* Layout.css */
+
+.content {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* SIDEMENU STYLES */
+  .sidemenu {
+    width: 240px;
+    background-color: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidemenu_logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .sidemenu_profilepic {
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .sidemenu_name {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .sidemenu_button--active,
+  .sidemenu_button--inactive,
+  .sidemenu_button--signout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .sidemenu_button--active {
+    background-color: #e0f7e9;
+    font-weight: bold;
+  }
+  
+  .sidemenu_button--inactive:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .sidemenu_button_icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sidemenu_button_text {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+  .sidemenu_button_text--signout {
+    color: #d32f2f;
+    font-weight: bold;
+  }
+  
+  .sidemenu_divider--top,
+  .sidemenu_divider--bottom {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  /* MAIN CONTENT WRAPPER */
+  .cardswrapper {
+    flex: 1;
+    padding: 40px;
+    background-color: #fafafa;
+  }
+  

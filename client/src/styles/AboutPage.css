@@ -1,0 +1,67 @@
+.about-page {
+    padding: 30px;
+    color: #333;
+    background-color: #f8f9fa;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .system-overview,
+  .project-objectives,
+  .explore-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .system-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .system-box {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .system-box h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  ul {
+    padding-left: 1.2rem;
+    font-size: 1.05rem;
+  }
+  
+  .nav-button {
+    margin-right: 1rem;
+    background-color: #007bff;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #0056b3;
+  }
+  
