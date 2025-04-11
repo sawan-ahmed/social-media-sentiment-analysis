@@ -1,67 +1,83 @@
-.about-page {
-    padding: 30px;
-    color: #333;
-    background-color: #f8f9fa;
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  .about-title {
-    font-size: 2.5rem;
-    color: #007bff;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .about-description {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .system-overview,
-  .project-objectives,
-  .explore-section {
-    margin-bottom: 2.5rem;
-  }
-  
-  .system-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .system-box {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  }
-  
-  .system-box h3 {
-    margin-top: 0;
-    color: #333;
-  }
-  
-  ul {
-    padding-left: 1.2rem;
-    font-size: 1.05rem;
-  }
-  
-  .nav-button {
-    margin-right: 1rem;
-    background-color: #007bff;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  
-  .nav-button:hover {
-    background-color: #0056b3;
-  }
-  
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  background-color: #f5f6fa;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1e1e1e;
+}
+
+.main-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin: 40px 0 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.vm-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  line-height: 1.6;
+}
+
+.vm-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #007bff;
+}
+
+.vm-box code {
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.docker-label {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.objectives-list {
+  margin-top: 20px;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.objectives-list li {
+  margin-bottom: 10px;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.objectives-list li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+}
