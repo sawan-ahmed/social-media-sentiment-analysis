@@ -16,10 +16,9 @@ const AboutPage = () => {
         <div className="vm-box">
           <h3>VM1 — Data Ingestion</h3>
           <p>
-            Hosts <code>tweet_producer</code> and <code>reddit_producer</code> to stream content from the Twitter and Reddit APIs.
+            Hosts <code>tweet_producer</code> and <code>reddit_producer</code> to stream content from the X and Reddit APIs.
             Also runs a Flask backend to interface with the frontend and trigger topic-based data pulls.
           </p>
-          <p className="docker-label"><strong>Dockerfiles:</strong> dockerfile.api, dockerfile.reddit, dockerfile.producer</p>
         </div>
 
         <div className="vm-box">
@@ -27,7 +26,6 @@ const AboutPage = () => {
           <p>
             Executes <code>inference_consumer.py</code>, which acts as the intermediate consumer forwarding raw tweet data into the ML model pipeline for classification.
           </p>
-          <p className="docker-label"><strong>Dockerfiles:</strong> dockerfile.inference</p>
         </div>
 
         <div className="vm-box">
@@ -35,7 +33,6 @@ const AboutPage = () => {
           <p>
             Runs <code>ml_consumer.py</code> for sentiment prediction using a custom MapReduce-inspired pipeline, and <code>mongo_consumer.py</code> to store results in MongoDB.
           </p>
-          <p className="docker-label"><strong>Dockerfiles:</strong> dockerfile.ml, dockerfile.mongo</p>
         </div>
 
         <div className="vm-box">

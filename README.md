@@ -8,7 +8,7 @@ The project is structured into multiple components:
 
 - **Frontend**: A web application built with React that displays sentiment analysis results.
 - **Backend**: An API built with Node.js and Express to fetch data and serve sentiment results.
-- **Data**: Social media data (e.g., Twitter and Reddit) fetched through their respective APIs.
+- **Data**: Social media data (e.g., X and Reddit) fetched through their respective APIs.
 - **MapReduce**: Used to process and analyze the sentiment of large-scale data.
 
 
