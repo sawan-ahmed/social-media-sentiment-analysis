@@ -7,7 +7,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 // Leave blank because Netlify will proxy these requests
-const BACKEND_URL = "";
+//const BACKEND_URL = "";
 
 const SentimentDashboard = () => {
   const [topic, setTopic] = useState("Vanderbilt");
