@@ -119,6 +119,9 @@ const SentimentDashboard = () => {
             {tweets.slice(0, 10).map((tweet, i) => (
               <li key={i} className={`tweet-item ${tweet.sentiment_label?.toLowerCase()}`}>
                 <strong>{tweet.sentiment_label}:</strong> {tweet.text}
+                <div className="tweet-meta">
+                  <span className="tweet-source">Source: {tweet.source}</span>
+                </div>
               </li>
             ))}
           </ul>

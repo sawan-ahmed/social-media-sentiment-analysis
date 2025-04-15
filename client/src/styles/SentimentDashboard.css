@@ -183,3 +183,13 @@
     }
   }
   
+  .tweet-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  .tweet-source {
+    font-style: italic;
+  }
+  
