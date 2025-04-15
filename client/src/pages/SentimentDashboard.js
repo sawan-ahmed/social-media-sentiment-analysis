@@ -13,33 +13,35 @@ const SentimentDashboard = () => {
   const [status, setStatus] = useState("");
   const [error, setError] = useState(null);
 
+  const normalizedTopic = topic.trim().toLowerCase();
+
   const fetchSentimentStats = useCallback(async () => {
     try {
-      const res = await axios.get(`/api/results?topic=${encodeURIComponent(topic)}`);
+      const res = await axios.get(`/api/results?topic=${encodeURIComponent(normalizedTopic)}`);
       setSentimentData(res.data);
       setError(null);
     } catch (err) {
       console.error("Failed to fetch sentiment stats:", err);
       setError("Could not load sentiment data.");
     }
-  }, [topic]);
+  }, [normalizedTopic]);
 
   const fetchTweets = useCallback(async () => {
     try {
-      const res = await axios.get(`/tweets?topic=${encodeURIComponent(topic)}`);
+      const res = await axios.get(`/tweets?topic=${encodeURIComponent(normalizedTopic)}`);
       setTweets(res.data?.data || []);
       setError(null);
     } catch (err) {
       console.error("Tweet fetch failed:", err);
       setError("Could not load tweets.");
     }
-  }, [topic]);
+  }, [normalizedTopic]);
 
   const startAnalysis = async () => {
-    if (!topic.trim()) return;
+    if (!normalizedTopic) return;
     setStatus("Starting analysis...");
     try {
-      await axios.post(`/api/analyze`, { topic });
+      await axios.post(`/api/analyze`, { topic: normalizedTopic });
       setStatus("⏳ Analyzing... please wait.");
 
       setTimeout(() => {
@@ -54,13 +56,13 @@ const SentimentDashboard = () => {
   };
 
   useEffect(() => {
-    if (!topic) return;
+    if (!normalizedTopic) return;
     const interval = setInterval(() => {
       fetchSentimentStats();
       fetchTweets();
     }, 10000);
     return () => clearInterval(interval);
-  }, [topic, fetchSentimentStats, fetchTweets]);
+  }, [normalizedTopic, fetchSentimentStats, fetchTweets]);
 
   const getPieData = () => {
     const { positive = 0, neutral = 0, negative = 0 } = sentimentData || {};
