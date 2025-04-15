@@ -64,8 +64,16 @@ const SentimentDashboard = () => {
 
   const getPieData = () => {
     const { positive = 0, neutral = 0, negative = 0 } = sentimentData || {};
-    const total = positive + neutral + negative || 1;
-    return [(positive / total) * 100, (neutral / total) * 100, (negative / total) * 100];
+    return [positive, neutral, negative];
+  };
+
+  const getPieLabels = () => {
+    const { positive = 0, neutral = 0, negative = 0 } = sentimentData || {};
+    return [
+      `Positive (${positive})`,
+      `Neutral (${neutral})`,
+      `Negative (${negative})`
+    ];
   };
 
   return (
@@ -89,7 +97,7 @@ const SentimentDashboard = () => {
           <h2>Sentiment Distribution</h2>
           <Pie
             data={{
-              labels: ["Positive", "Neutral", "Negative"],
+              labels: getPieLabels(),
               datasets: [{
                 data: getPieData(),
                 backgroundColor: ["#00C49F", "#FFBB28", "#FF4444"],
@@ -102,7 +110,12 @@ const SentimentDashboard = () => {
                 legend: { position: "bottom" },
                 tooltip: {
                   callbacks: {
-                    label: (context) => `${context.label}: ${context.raw.toFixed(1)}%`,
+                    label: (context) => {
+                      const total = getPieData().reduce((a, b) => a + b, 0);
+                      const count = context.raw;
+                      const percentage = ((count / total) * 100).toFixed(1);
+                      return `${context.label}: ${percentage}% (${count})`;
+                    },
                   },
                 },
               },
